@@ -1,0 +1,679 @@
+@prefix : <http://owl-ontologies.com/smarttourisminspanishcities#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://owl-ontologies.com/smarttourisminspanishcities#> .
+
+<http://owl-ontologies.com/smarttourisminspanishcities#> rdf:type owl:Ontology ;
+                                                          owl:versionIRI <http://owl-ontologies.com/smarttourisminspanishcities#1.8> ;
+                                                          rdfs:comment "Main places of interest in the most attractive cities from a tourist point of view in Spain" ;
+                                                          rdfs:label "Smart Tourism in Spanish Cities Ontology" ;
+                                                          owl:versionInfo 1.8 ;
+                                                          <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> ,
+                                                                                             "Alex Riera" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf rdfs:comment ,
+                               <https://w3id.org/mod#createdWith> .
+
+
+###  https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/goodrelations/v1#hasPriceSpecification
+<http://purl.org/goodrelations/v1#hasPriceSpecification> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <http://smarttourisminspanishcities#Transport> ;
+                                                         rdfs:comment "Average price for travel." ;
+                                                         rdfs:label "has price specification" .
+
+
+###  http://schema.org/aggregateRating
+<http://schema.org/aggregateRating> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://smarttourisminspanishcities#Attraction> ,
+                                                <http://smarttourisminspanishcities#Hotel> ,
+                                                <http://smarttourisminspanishcities#Restaurant> ;
+                                    rdfs:comment "Customers valorations." ;
+                                    rdfs:label "aggregate rating" .
+
+
+###  http://schema.org/containsPlace
+<http://schema.org/containsPlace> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <http://smarttourisminspanishcities#City> ;
+                                  rdfs:range <http://smarttourisminspanishcities#Attraction> ,
+                                             <http://smarttourisminspanishcities#Hotel> ,
+                                             <http://smarttourisminspanishcities#Restaurant> ;
+                                  rdfs:comment "The city have this place." ;
+                                  rdfs:label "contains place" .
+
+
+###  http://schema.org/event
+<http://schema.org/event> rdf:type owl:ObjectProperty ;
+                          rdfs:domain <http://smarttourisminspanishcities#City> ;
+                          rdfs:range <http://smarttourisminspanishcities#Event> ;
+                          rdfs:comment "A scheduled activity or event that offers entertainment to visitors and locals in that city." ;
+                          rdfs:label "event" .
+
+
+###  http://schema.org/geo
+<http://schema.org/geo> rdf:type owl:ObjectProperty ;
+                        rdfs:domain <http://smarttourisminspanishcities#City> ;
+                        rdfs:comment "GPS coordinate that specific place." ;
+                        rdfs:label "geo" .
+
+
+###  http://schema.org/hotelCategory
+<http://schema.org/hotelCategory> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <http://smarttourisminspanishcities#Hotel> ;
+                                  rdfs:comment "Type of Hotel." ;
+                                  rdfs:label "hotel category" .
+
+
+###  http://schema.org/priceRange
+<http://schema.org/priceRange> rdf:type owl:ObjectProperty ;
+                               rdfs:domain <http://smarttourisminspanishcities#Restaurant> ;
+                               rdfs:comment "Average price for meal." ;
+                               rdfs:label "price range" .
+
+
+###  http://schema.org/servesCuisine
+<http://schema.org/servesCuisine> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <http://smarttourisminspanishcities#Restaurant> ;
+                                  rdfs:comment "Type of cusine." ;
+                                  rdfs:label "serves cuisine" .
+
+
+###  http://schema.org/starRating
+<http://schema.org/starRating> rdf:type owl:ObjectProperty ;
+                               rdfs:domain <http://smarttourisminspanishcities#Hotel> ;
+                               rdfs:comment "Rating of the hotel based on quality standards." ;
+                               rdfs:label "star rating" .
+
+
+###  http://schema.org/transportation
+<http://schema.org/transportation> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://smarttourisminspanishcities#City> ;
+                                   rdfs:range <http://smarttourisminspanishcities#Transport> ;
+                                   rdfs:comment "Transports available in that city." ;
+                                   rdfs:label "transportation" .
+
+
+###  http://smarttourisminspanishcities#isIdentifiedAs
+<http://smarttourisminspanishcities#isIdentifiedAs> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://smarttourisminspanishcities#isIdentifiedAs> ;
+                                                                  owl:someValuesFrom <http://smarttourisminspanishcities#City>
+                                                                ] ;
+                                                    rdfs:range [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://smarttourisminspanishcities#isIdentifiedAs> ;
+                                                                 owl:someValuesFrom <http://smarttourisminspanishcities#City>
+                                                               ] ;
+                                                    rdfs:comment "Connects a city to its identity instance" ;
+                                                    rdfs:label "is identified as" .
+
+
+###  http://smarttourisminspanishcities#night_price
+<http://smarttourisminspanishcities#night_price> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://smarttourisminspanishcities#Hotel> ;
+                                                 rdfs:comment "Price per night in that Hotel." ;
+                                                 rdfs:label "night_price" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://smarttourisminspanishcities#aggregateRating
+<http://smarttourisminspanishcities#aggregateRating> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://schema.org/aggregateRating> ;
+                                                                   owl:someValuesFrom <http://smarttourisminspanishcities#Attraction>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://schema.org/aggregateRating> ;
+                                                                   owl:someValuesFrom <http://smarttourisminspanishcities#Hotel>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://schema.org/aggregateRating> ;
+                                                                   owl:someValuesFrom <http://smarttourisminspanishcities#Restaurant>
+                                                                 ] ;
+                                                     rdfs:range xsd:float ;
+                                                     rdfs:comment "Customers valorations." ;
+                                                     rdfs:label "Aggregate Rating" .
+
+
+###  http://smarttourisminspanishcities#attractionName
+<http://smarttourisminspanishcities#attractionName> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment "The official name of the attraction." ;
+                                                    rdfs:label "Attraction Name" .
+
+
+###  http://smarttourisminspanishcities#attraction_id
+<http://smarttourisminspanishcities#attraction_id> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://smarttourisminspanishcities#Attraction> ;
+                                                   rdfs:range xsd:int .
+
+
+###  http://smarttourisminspanishcities#cityName
+<http://smarttourisminspanishcities#cityName> rdf:type owl:DatatypeProperty ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "The official name of the city." ;
+                                              rdfs:label "City Name" .
+
+
+###  http://smarttourisminspanishcities#city_id
+<http://smarttourisminspanishcities#city_id> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <http://smarttourisminspanishcities#City> ;
+                                             rdfs:range xsd:int .
+
+
+###  http://smarttourisminspanishcities#company
+<http://smarttourisminspanishcities#company> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <http://smarttourisminspanishcities#Transport> ;
+                                             rdfs:range xsd:string .
+
+
+###  http://smarttourisminspanishcities#date
+<http://smarttourisminspanishcities#date> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <http://smarttourisminspanishcities#Event> ;
+                                          rdfs:range xsd:date .
+
+
+###  http://smarttourisminspanishcities#eventName
+<http://smarttourisminspanishcities#eventName> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://schema.org/event> ;
+                                                             owl:someValuesFrom <http://smarttourisminspanishcities#Event>
+                                                           ] ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "The official name of the event." ;
+                                               rdfs:label "Event Name" .
+
+
+###  http://smarttourisminspanishcities#event_id
+<http://smarttourisminspanishcities#event_id> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <http://smarttourisminspanishcities#Event> ;
+                                              rdfs:range xsd:int .
+
+
+###  http://smarttourisminspanishcities#geo
+<http://smarttourisminspanishcities#geo> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://smarttourisminspanishcities#City> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:label "Geo" .
+
+
+###  http://smarttourisminspanishcities#hasPriceSpecification
+<http://smarttourisminspanishcities#hasPriceSpecification> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:domain [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://purl.org/goodrelations/v1#hasPriceSpecification> ;
+                                                                         owl:someValuesFrom <http://smarttourisminspanishcities#Transport>
+                                                                       ] ;
+                                                           rdfs:range xsd:float ;
+                                                           rdfs:comment "Average price for travel." ;
+                                                           rdfs:label "Has Price Specification" .
+
+
+###  http://smarttourisminspanishcities#hotelCategory
+<http://smarttourisminspanishcities#hotelCategory> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://schema.org/hotelCategory> ;
+                                                                 owl:someValuesFrom <http://smarttourisminspanishcities#Hotel>
+                                                               ] ;
+                                                   rdfs:range xsd:string ;
+                                                   rdfs:comment "Type of Hotel." ;
+                                                   rdfs:label "Hotel Category" .
+
+
+###  http://smarttourisminspanishcities#hotelName
+<http://smarttourisminspanishcities#hotelName> rdf:type owl:DatatypeProperty ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "The official name of the hotel." ;
+                                               rdfs:label "Hotel Name" .
+
+
+###  http://smarttourisminspanishcities#hotel_id
+<http://smarttourisminspanishcities#hotel_id> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <http://smarttourisminspanishcities#Hotel> ;
+                                              rdfs:range xsd:int .
+
+
+###  http://smarttourisminspanishcities#nightPrice
+<http://smarttourisminspanishcities#nightPrice> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://smarttourisminspanishcities#night_price> ;
+                                                              owl:someValuesFrom <http://smarttourisminspanishcities#Hotel>
+                                                            ] ;
+                                                rdfs:range xsd:float ;
+                                                rdfs:comment "Price per night in that Hotel." ;
+                                                rdfs:label "Night Price" .
+
+
+###  http://smarttourisminspanishcities#priceRange
+<http://smarttourisminspanishcities#priceRange> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://schema.org/priceRange> ;
+                                                              owl:someValuesFrom <http://smarttourisminspanishcities#Restaurant>
+                                                            ] ;
+                                                rdfs:range xsd:float ;
+                                                rdfs:comment "The general price range for services provided, such as meals or transport." ;
+                                                rdfs:label "Price Range" .
+
+
+###  http://smarttourisminspanishcities#restaurantName
+<http://smarttourisminspanishcities#restaurantName> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment "The official name of the restaurant." ;
+                                                    rdfs:label "Restaurant Name" .
+
+
+###  http://smarttourisminspanishcities#restaurant_id
+<http://smarttourisminspanishcities#restaurant_id> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://smarttourisminspanishcities#Restaurant> ;
+                                                   rdfs:range xsd:int .
+
+
+###  http://smarttourisminspanishcities#servesCuisine
+<http://smarttourisminspanishcities#servesCuisine> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://schema.org/servesCuisine> ;
+                                                                 owl:someValuesFrom <http://smarttourisminspanishcities#Restaurant>
+                                                               ] ;
+                                                   rdfs:range xsd:string ;
+                                                   rdfs:comment "Type of cusine." ;
+                                                   rdfs:label "Serves Cuisine" .
+
+
+###  http://smarttourisminspanishcities#starRating
+<http://smarttourisminspanishcities#starRating> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://schema.org/starRating> ;
+                                                              owl:someValuesFrom <http://smarttourisminspanishcities#Hotel>
+                                                            ] ;
+                                                rdfs:range xsd:int ;
+                                                rdfs:comment "Rating of the hotel based on quality standards." ;
+                                                rdfs:label "Star Rating" .
+
+
+###  http://smarttourisminspanishcities#transport_id
+<http://smarttourisminspanishcities#transport_id> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <http://smarttourisminspanishcities#Transport> ;
+                                                  rdfs:range xsd:int .
+
+
+###  http://smarttourisminspanishcities#type
+<http://smarttourisminspanishcities#type> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <http://smarttourisminspanishcities#Attraction> ,
+                                                      <http://smarttourisminspanishcities#Transport> ;
+                                          rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://smarttourisminspanishcities#AndalusianCuisine
+<http://smarttourisminspanishcities#AndalusianCuisine> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://smarttourisminspanishcities#Restaurant> ;
+                                                       rdfs:comment "Typical dishes of Andalusian cuisine." ;
+                                                       rdfs:label "Andalusian  Cuisine" .
+
+
+###  http://smarttourisminspanishcities#Attraction
+<http://smarttourisminspanishcities#Attraction> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://smarttourisminspanishcities#Place> ;
+                                                rdfs:comment "Point of interest for tourists for its cultural, historical, geographical or entertainment value." ;
+                                                rdfs:label "Attraction" .
+
+
+###  http://smarttourisminspanishcities#BeachAttraction
+<http://smarttourisminspanishcities#BeachAttraction> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://smarttourisminspanishcities#Attraction> ;
+                                                     rdfs:comment "Attraction located in a coastal area related to mainly aquatic and sailing activities." ;
+                                                     rdfs:label "Beach Attraction" .
+
+
+###  http://smarttourisminspanishcities#BeachHotel
+<http://smarttourisminspanishcities#BeachHotel> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://smarttourisminspanishcities#Hotel> ;
+                                                rdfs:comment "Hotel located near the coast where travelers are looking for proximity to the beach and services related to the maritime environment." ;
+                                                rdfs:label "Beach Hotel" .
+
+
+###  http://smarttourisminspanishcities#Bike
+<http://smarttourisminspanishcities#Bike> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://smarttourisminspanishcities#Transport> ;
+                                          rdfs:comment "Human-powered vehicle that moves thanks to the force transmitted to two aligned wheels." ;
+                                          rdfs:label "Bike" ;
+                                          rdfs:sameAs "https://dbpedia.org/page/Bicycle" .
+
+
+###  http://smarttourisminspanishcities#Bus
+<http://smarttourisminspanishcities#Bus> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://smarttourisminspanishcities#Transport> ;
+                                         rdfs:comment "A large motor vehicle that carries passengers by road, usually on fixed routes." ;
+                                         rdfs:label "Bus" .
+
+
+###  http://smarttourisminspanishcities#BusinessHotel
+<http://smarttourisminspanishcities#BusinessHotel> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://smarttourisminspanishcities#Hotel> ;
+                                                   rdfs:comment "Hotel focused on business trips with functional rooms and affordable prices." ;
+                                                   rdfs:label "Business Hotel" .
+
+
+###  http://smarttourisminspanishcities#City
+<http://smarttourisminspanishcities#City> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://smarttourisminspanishcities#Place> ;
+                                          rdfs:comment "Urban area that offers general interest activities and tourist services." ;
+                                          rdfs:label "City" ;
+                                          rdfs:sameAs "http://dbpedia.org/resource/City" .
+
+
+###  http://smarttourisminspanishcities#CountryHotel
+<http://smarttourisminspanishcities#CountryHotel> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://smarttourisminspanishcities#Hotel> ;
+                                                  rdfs:comment "Hotel located in a rural area with rustic aesthetics and rooms." ;
+                                                  rdfs:label "Country Hotel" .
+
+
+###  http://smarttourisminspanishcities#CulturalAttraction
+<http://smarttourisminspanishcities#CulturalAttraction> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://smarttourisminspanishcities#Attraction> ;
+                                                        rdfs:comment "Attraction with a theme focused on art, history, or local traditions." ;
+                                                        rdfs:label "Cultural Attraction" .
+
+
+###  http://smarttourisminspanishcities#CulturalEvent
+<http://smarttourisminspanishcities#CulturalEvent> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://smarttourisminspanishcities#Event> ;
+                                                   rdfs:comment "Event that celebrates cultural expressions, such as music, dance or art." ;
+                                                   rdfs:label "Cultural Event" .
+
+
+###  http://smarttourisminspanishcities#Event
+<http://smarttourisminspanishcities#Event> rdf:type owl:Class ;
+                                           rdfs:comment "A scheduled activity or event that offers entertainment to visitors and locals." ;
+                                           rdfs:label "Event" .
+
+
+###  http://smarttourisminspanishcities#GastronomicEvent
+<http://smarttourisminspanishcities#GastronomicEvent> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://smarttourisminspanishcities#Event> ;
+                                                      rdfs:comment "Culinary themed event." ;
+                                                      rdfs:label "Gastronomic Event" .
+
+
+###  http://smarttourisminspanishcities#Hotel
+<http://smarttourisminspanishcities#Hotel> rdf:type owl:Class ;
+                                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://smarttourisminspanishcities#hotel_id> ;
+                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onDataRange xsd:int
+                                                               ] ;
+                                           rdfs:subClassOf <http://smarttourisminspanishcities#Place> ;
+                                           rdfs:comment "A home that offers accommodation services to travelers." ;
+                                           rdfs:label "Hotel" .
+
+
+###  http://smarttourisminspanishcities#ItalianCuisine
+<http://smarttourisminspanishcities#ItalianCuisine> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://smarttourisminspanishcities#Restaurant> ;
+                                                    rdfs:comment "Typical dishes of Italian cuisine." ;
+                                                    rdfs:label "Italian Cuisine" .
+
+
+###  http://smarttourisminspanishcities#JapaneseCuisine
+<http://smarttourisminspanishcities#JapaneseCuisine> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://smarttourisminspanishcities#Restaurant> ;
+                                                     rdfs:comment "Typical dishes of Japanese cuisine." ;
+                                                     rdfs:label "Japanese  Cuisine" .
+
+
+###  http://smarttourisminspanishcities#KnownCity
+<http://smarttourisminspanishcities#KnownCity> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://smarttourisminspanishcities#Place> .
+
+
+###  http://smarttourisminspanishcities#LuxuryHotel
+<http://smarttourisminspanishcities#LuxuryHotel> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://smarttourisminspanishcities#Hotel> ;
+                                                 rdfs:comment "Hotel equipped with the highest level of all its facilities, maximum exclusivity and focused on people with high purchasing power." ;
+                                                 rdfs:label "Luxury Hotel" .
+
+
+###  http://smarttourisminspanishcities#MediterraneanCuisine
+<http://smarttourisminspanishcities#MediterraneanCuisine> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://smarttourisminspanishcities#Restaurant> ;
+                                                          rdfs:comment "Typical dishes of Mediterranean cuisine." ;
+                                                          rdfs:label "Mediterranean Cuisine" .
+
+
+###  http://smarttourisminspanishcities#Metro
+<http://smarttourisminspanishcities#Metro> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://smarttourisminspanishcities#Transport> ;
+                                           rdfs:comment "Electric railway for passenger transport within urban areas, generally underground" ;
+                                           rdfs:label "Metro" .
+
+
+###  http://smarttourisminspanishcities#MexicanCuisine
+<http://smarttourisminspanishcities#MexicanCuisine> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://smarttourisminspanishcities#Restaurant> ;
+                                                    rdfs:comment "Typical dishes of Mexican cuisine." ;
+                                                    rdfs:label "Mexican Cuisine" .
+
+
+###  http://smarttourisminspanishcities#MonumentAttraction
+<http://smarttourisminspanishcities#MonumentAttraction> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://smarttourisminspanishcities#Attraction> ;
+                                                        rdfs:comment "Attractions related to monuments." ;
+                                                        rdfs:label "Monument Attraction" .
+
+
+###  http://smarttourisminspanishcities#MuseumAttraction
+<http://smarttourisminspanishcities#MuseumAttraction> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://smarttourisminspanishcities#Attraction> ;
+                                                      rdfs:comment "Attractions related to museums of differents types." ;
+                                                      rdfs:label "Museum Attraction" .
+
+
+###  http://smarttourisminspanishcities#MusicalEvent
+<http://smarttourisminspanishcities#MusicalEvent> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://smarttourisminspanishcities#Event> ;
+                                                  rdfs:comment "Musical event that attracts spectators." ;
+                                                  rdfs:label "Musical Event" .
+
+
+###  http://smarttourisminspanishcities#ParkAttraction
+<http://smarttourisminspanishcities#ParkAttraction> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://smarttourisminspanishcities#Attraction> ;
+                                                    rdfs:comment "Attraction located in parks of a cultural, natural or recreational type." ;
+                                                    rdfs:label "Park Attraction" .
+
+
+###  http://smarttourisminspanishcities#Place
+<http://smarttourisminspanishcities#Place> rdf:type owl:Class ;
+                                           rdfs:comment "Physical place." ;
+                                           rdfs:label "Place" .
+
+
+###  http://smarttourisminspanishcities#Restaurant
+<http://smarttourisminspanishcities#Restaurant> rdf:type owl:Class ;
+                                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://smarttourisminspanishcities#servesCuisine> ;
+                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onDataRange xsd:string
+                                                                    ] ;
+                                                rdfs:subClassOf <http://smarttourisminspanishcities#Place> ;
+                                                rdfs:comment "Establishment where different types of food are served to customers." ;
+                                                rdfs:label "Restaurant" .
+
+
+###  http://smarttourisminspanishcities#SportingEvent
+<http://smarttourisminspanishcities#SportingEvent> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://smarttourisminspanishcities#Event> ;
+                                                   rdfs:comment "Sporting event that attracts participants and spectators." ;
+                                                   rdfs:label "Sporting Event" .
+
+
+###  http://smarttourisminspanishcities#Taxi
+<http://smarttourisminspanishcities#Taxi> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://smarttourisminspanishcities#Transport> .
+
+
+###  http://smarttourisminspanishcities#TecnologicEvent
+<http://smarttourisminspanishcities#TecnologicEvent> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://smarttourisminspanishcities#Event> ;
+                                                     rdfs:comment "Event that discusses advances and developments in the fields of technology." ;
+                                                     rdfs:label "Tecnologic Event" .
+
+
+###  http://smarttourisminspanishcities#TouristHotel
+<http://smarttourisminspanishcities#TouristHotel> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://smarttourisminspanishcities#Hotel> ;
+                                                  rdfs:comment "Hotel located in tourist areas equipped to be comfortable and relaxing for its guests." ;
+                                                  rdfs:label "Tourist Hotel" .
+
+
+###  http://smarttourisminspanishcities#Tram
+<http://smarttourisminspanishcities#Tram> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://smarttourisminspanishcities#Transport> ;
+                                          rdfs:comment "Electric-powered vehicle that transports passengers on rails and circulates mainly in urban areas." ;
+                                          rdfs:label "Tram" .
+
+
+###  http://smarttourisminspanishcities#Transport
+<http://smarttourisminspanishcities#Transport> rdf:type owl:Class ;
+                                               rdfs:comment "A service that moves people or goods between locations." ;
+                                               rdfs:label "Transport" ;
+                                               rdfs:sameAs "http://dbpedia.org/resource/Transport" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://smarttourisminspanishcities#Barcelona
+<http://smarttourisminspanishcities#Barcelona> rdf:type owl:NamedIndividual ,
+                                                        <http://smarttourisminspanishcities#City> ;
+                                               <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> ,
+                                                                                 <http://smarttourisminspanishcities#FiraBarcelona> ,
+                                                                                 <http://smarttourisminspanishcities#ParcBarcelona> ;
+                                               <http://smarttourisminspanishcities#cityName> "Barcelona" ;
+                                               <http://smarttourisminspanishcities#city_id> "4"^^xsd:int ;
+                                               <http://smarttourisminspanishcities#geo> "41.3874,2.1686" ;
+                                               rdfs:sameAs "http://dbpedia.org/resource/Barcelona" .
+
+
+###  http://smarttourisminspanishcities#FiraBarcelona
+<http://smarttourisminspanishcities#FiraBarcelona> rdf:type owl:NamedIndividual ,
+                                                            <http://smarttourisminspanishcities#CulturalEvent> ,
+                                                            <http://smarttourisminspanishcities#Event> ;
+                                                   <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> ;
+                                                   <http://smarttourisminspanishcities#date> "2024-09-21"^^xsd:date ;
+                                                   <http://smarttourisminspanishcities#eventName> "Fira Barcelona" ;
+                                                   <http://smarttourisminspanishcities#event_id> "12"^^xsd:int ;
+                                                   <http://smarttourisminspanishcities#type> "Cultural" .
+
+
+###  http://smarttourisminspanishcities#HotelRoyalBarcelona
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> rdf:type owl:NamedIndividual ,
+                                                                  <http://smarttourisminspanishcities#BeachHotel> ,
+                                                                  <http://smarttourisminspanishcities#Hotel> ;
+                                                         <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> ;
+                                                         <http://smarttourisminspanishcities#aggregateRating> "4.0"^^xsd:float ;
+                                                         <http://smarttourisminspanishcities#hotelCategory> "Beach Hotel" ;
+                                                         <http://smarttourisminspanishcities#hotelName> "Hotel Royal Barcelona" ;
+                                                         <http://smarttourisminspanishcities#hotel_id> "9"^^xsd:int ;
+                                                         <http://smarttourisminspanishcities#nightPrice> "252.0"^^xsd:float ;
+                                                         <http://smarttourisminspanishcities#starRating> "4"^^xsd:int .
+
+
+###  http://smarttourisminspanishcities#ParcBarcelona
+<http://smarttourisminspanishcities#ParcBarcelona> rdf:type owl:NamedIndividual ,
+                                                            <http://smarttourisminspanishcities#Attraction> ,
+                                                            <http://smarttourisminspanishcities#ParkAttraction> ;
+                                                   <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> ;
+                                                   <http://smarttourisminspanishcities#aggregateRating> "4.9"^^xsd:float ;
+                                                   <http://smarttourisminspanishcities#attractionName> "Parc Barcelona" ;
+                                                   <http://smarttourisminspanishcities#attraction_id> "43"^^xsd:int ;
+                                                   <http://smarttourisminspanishcities#type> "Parc" .
+
+
+###  http://smarttourisminspanishcities#RestaurantDeliciaBarcelona
+<http://smarttourisminspanishcities#RestaurantDeliciaBarcelona> rdf:type owl:NamedIndividual ,
+                                                                         <http://smarttourisminspanishcities#AndalusianCuisine> ,
+                                                                         <http://smarttourisminspanishcities#Restaurant> .
+
+
+###  http://smarttourisminspanishcities#Taxi
+<http://smarttourisminspanishcities#Taxi> rdf:type owl:NamedIndividual ,
+                                                   <http://smarttourisminspanishcities#Taxi> ,
+                                                   <http://smarttourisminspanishcities#Transport> ;
+                                          <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> ;
+                                          <http://smarttourisminspanishcities#aggregateRating> "4.9"^^xsd:float ;
+                                          <http://smarttourisminspanishcities#company> "City Barcelona" ;
+                                          <http://smarttourisminspanishcities#transport_id> "64"^^xsd:int ;
+                                          <http://smarttourisminspanishcities#type> "Taxi" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://smarttourisminspanishcities#Taxi> rdfs:comment "Vehicle with a driver that transports passengers to the requested destination in exchange for a fare." ;
+                                          rdfs:label "Taxi" ;
+                                          rdfs:sameAs "http://dbpedia.org/resource/Taxi" .
+
+
+rdfs:label rdfs:label "label" .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#c> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://smarttourisminspanishcities#City> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://smarttourisminspanishcities#KnownCity> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

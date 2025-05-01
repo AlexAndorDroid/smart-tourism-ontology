@@ -1,0 +1,628 @@
+<http://owl-ontologies.com/smarttourisminspanishcities#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://owl-ontologies.com/smarttourisminspanishcities#> <http://www.w3.org/2002/07/owl#versionIRI> <http://owl-ontologies.com/smarttourisminspanishcities#1.8> .
+<http://owl-ontologies.com/smarttourisminspanishcities#> <http://www.w3.org/2000/01/rdf-schema#comment> "Main places of interest in the most attractive cities from a tourist point of view in Spain" .
+<http://owl-ontologies.com/smarttourisminspanishcities#> <http://www.w3.org/2000/01/rdf-schema#label> "Smart Tourism in Spanish Cities Ontology" .
+<http://owl-ontologies.com/smarttourisminspanishcities#> <http://www.w3.org/2002/07/owl#versionInfo> "1.8"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://owl-ontologies.com/smarttourisminspanishcities#> <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+<http://owl-ontologies.com/smarttourisminspanishcities#> <https://w3id.org/mod#createdWith> "Alex Riera" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2000/01/rdf-schema#label
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#sameAs
+<http://www.w3.org/2000/01/rdf-schema#sameAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2000/01/rdf-schema#sameAs> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#comment> .
+<http://www.w3.org/2000/01/rdf-schema#sameAs> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/mod#createdWith> .
+# 
+# https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/goodrelations/v1#hasPriceSpecification
+<http://purl.org/goodrelations/v1#hasPriceSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/goodrelations/v1#hasPriceSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Transport> .
+<http://purl.org/goodrelations/v1#hasPriceSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Average price for travel." .
+<http://purl.org/goodrelations/v1#hasPriceSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "has price specification" .
+# 
+# http://schema.org/aggregateRating
+<http://schema.org/aggregateRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/aggregateRating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Attraction> .
+<http://schema.org/aggregateRating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Hotel> .
+<http://schema.org/aggregateRating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Restaurant> .
+<http://schema.org/aggregateRating> <http://www.w3.org/2000/01/rdf-schema#comment> "Customers valorations." .
+<http://schema.org/aggregateRating> <http://www.w3.org/2000/01/rdf-schema#label> "aggregate rating" .
+# 
+# http://schema.org/containsPlace
+<http://schema.org/containsPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/containsPlace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#City> .
+<http://schema.org/containsPlace> <http://www.w3.org/2000/01/rdf-schema#range> <http://smarttourisminspanishcities#Attraction> .
+<http://schema.org/containsPlace> <http://www.w3.org/2000/01/rdf-schema#range> <http://smarttourisminspanishcities#Hotel> .
+<http://schema.org/containsPlace> <http://www.w3.org/2000/01/rdf-schema#range> <http://smarttourisminspanishcities#Restaurant> .
+<http://schema.org/containsPlace> <http://www.w3.org/2000/01/rdf-schema#comment> "The city have this place." .
+<http://schema.org/containsPlace> <http://www.w3.org/2000/01/rdf-schema#label> "contains place" .
+# 
+# http://schema.org/event
+<http://schema.org/event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/event> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#City> .
+<http://schema.org/event> <http://www.w3.org/2000/01/rdf-schema#range> <http://smarttourisminspanishcities#Event> .
+<http://schema.org/event> <http://www.w3.org/2000/01/rdf-schema#comment> "A scheduled activity or event that offers entertainment to visitors and locals in that city." .
+<http://schema.org/event> <http://www.w3.org/2000/01/rdf-schema#label> "event" .
+# 
+# http://schema.org/geo
+<http://schema.org/geo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/geo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#City> .
+<http://schema.org/geo> <http://www.w3.org/2000/01/rdf-schema#comment> "GPS coordinate that specific place." .
+<http://schema.org/geo> <http://www.w3.org/2000/01/rdf-schema#label> "geo" .
+# 
+# http://schema.org/hotelCategory
+<http://schema.org/hotelCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/hotelCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Hotel> .
+<http://schema.org/hotelCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of Hotel." .
+<http://schema.org/hotelCategory> <http://www.w3.org/2000/01/rdf-schema#label> "hotel category" .
+# 
+# http://schema.org/priceRange
+<http://schema.org/priceRange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/priceRange> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Restaurant> .
+<http://schema.org/priceRange> <http://www.w3.org/2000/01/rdf-schema#comment> "Average price for meal." .
+<http://schema.org/priceRange> <http://www.w3.org/2000/01/rdf-schema#label> "price range" .
+# 
+# http://schema.org/servesCuisine
+<http://schema.org/servesCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/servesCuisine> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Restaurant> .
+<http://schema.org/servesCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of cusine." .
+<http://schema.org/servesCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "serves cuisine" .
+# 
+# http://schema.org/starRating
+<http://schema.org/starRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/starRating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Hotel> .
+<http://schema.org/starRating> <http://www.w3.org/2000/01/rdf-schema#comment> "Rating of the hotel based on quality standards." .
+<http://schema.org/starRating> <http://www.w3.org/2000/01/rdf-schema#label> "star rating" .
+# 
+# http://schema.org/transportation
+<http://schema.org/transportation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/transportation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#City> .
+<http://schema.org/transportation> <http://www.w3.org/2000/01/rdf-schema#range> <http://smarttourisminspanishcities#Transport> .
+<http://schema.org/transportation> <http://www.w3.org/2000/01/rdf-schema#comment> "Transports available in that city." .
+<http://schema.org/transportation> <http://www.w3.org/2000/01/rdf-schema#label> "transportation" .
+# 
+# http://smarttourisminspanishcities#isIdentifiedAs
+<http://smarttourisminspanishcities#isIdentifiedAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://smarttourisminspanishcities#isIdentifiedAs> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#City> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://smarttourisminspanishcities#isIdentifiedAs> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#isIdentifiedAs> <http://www.w3.org/2000/01/rdf-schema#range> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#City> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://smarttourisminspanishcities#isIdentifiedAs> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#isIdentifiedAs> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a city to its identity instance" .
+<http://smarttourisminspanishcities#isIdentifiedAs> <http://www.w3.org/2000/01/rdf-schema#label> "is identified as" .
+# 
+# http://smarttourisminspanishcities#night_price
+<http://smarttourisminspanishcities#night_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://smarttourisminspanishcities#night_price> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Hotel> .
+<http://smarttourisminspanishcities#night_price> <http://www.w3.org/2000/01/rdf-schema#comment> "Price per night in that Hotel." .
+<http://smarttourisminspanishcities#night_price> <http://www.w3.org/2000/01/rdf-schema#label> "night_price" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://smarttourisminspanishcities#aggregateRating
+<http://smarttourisminspanishcities#aggregateRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#aggregateRating> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Attraction> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/aggregateRating> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#aggregateRating> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Hotel> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/aggregateRating> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#aggregateRating> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Restaurant> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/aggregateRating> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#aggregateRating> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://smarttourisminspanishcities#aggregateRating> <http://www.w3.org/2000/01/rdf-schema#comment> "Customers valorations." .
+<http://smarttourisminspanishcities#aggregateRating> <http://www.w3.org/2000/01/rdf-schema#label> "Aggregate Rating" .
+# 
+# http://smarttourisminspanishcities#attractionName
+<http://smarttourisminspanishcities#attractionName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#attractionName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://smarttourisminspanishcities#attractionName> <http://www.w3.org/2000/01/rdf-schema#comment> "The official name of the attraction." .
+<http://smarttourisminspanishcities#attractionName> <http://www.w3.org/2000/01/rdf-schema#label> "Attraction Name" .
+# 
+# http://smarttourisminspanishcities#attraction_id
+<http://smarttourisminspanishcities#attraction_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#attraction_id> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Attraction> .
+<http://smarttourisminspanishcities#attraction_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://smarttourisminspanishcities#cityName
+<http://smarttourisminspanishcities#cityName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#cityName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://smarttourisminspanishcities#cityName> <http://www.w3.org/2000/01/rdf-schema#comment> "The official name of the city." .
+<http://smarttourisminspanishcities#cityName> <http://www.w3.org/2000/01/rdf-schema#label> "City Name" .
+# 
+# http://smarttourisminspanishcities#city_id
+<http://smarttourisminspanishcities#city_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#city_id> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#City> .
+<http://smarttourisminspanishcities#city_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://smarttourisminspanishcities#company
+<http://smarttourisminspanishcities#company> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#company> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Transport> .
+<http://smarttourisminspanishcities#company> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://smarttourisminspanishcities#date
+<http://smarttourisminspanishcities#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#date> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Event> .
+<http://smarttourisminspanishcities#date> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+# 
+# http://smarttourisminspanishcities#eventName
+<http://smarttourisminspanishcities#eventName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#eventName> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Event> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/event> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#eventName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://smarttourisminspanishcities#eventName> <http://www.w3.org/2000/01/rdf-schema#comment> "The official name of the event." .
+<http://smarttourisminspanishcities#eventName> <http://www.w3.org/2000/01/rdf-schema#label> "Event Name" .
+# 
+# http://smarttourisminspanishcities#event_id
+<http://smarttourisminspanishcities#event_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#event_id> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Event> .
+<http://smarttourisminspanishcities#event_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://smarttourisminspanishcities#geo
+<http://smarttourisminspanishcities#geo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#geo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#City> .
+<http://smarttourisminspanishcities#geo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://smarttourisminspanishcities#geo> <http://www.w3.org/2000/01/rdf-schema#label> "Geo" .
+# 
+# http://smarttourisminspanishcities#hasPriceSpecification
+<http://smarttourisminspanishcities#hasPriceSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#hasPriceSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Transport> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/goodrelations/v1#hasPriceSpecification> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#hasPriceSpecification> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://smarttourisminspanishcities#hasPriceSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Average price for travel." .
+<http://smarttourisminspanishcities#hasPriceSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Has Price Specification" .
+# 
+# http://smarttourisminspanishcities#hotelCategory
+<http://smarttourisminspanishcities#hotelCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#hotelCategory> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Hotel> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/hotelCategory> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#hotelCategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://smarttourisminspanishcities#hotelCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of Hotel." .
+<http://smarttourisminspanishcities#hotelCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Hotel Category" .
+# 
+# http://smarttourisminspanishcities#hotelName
+<http://smarttourisminspanishcities#hotelName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#hotelName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://smarttourisminspanishcities#hotelName> <http://www.w3.org/2000/01/rdf-schema#comment> "The official name of the hotel." .
+<http://smarttourisminspanishcities#hotelName> <http://www.w3.org/2000/01/rdf-schema#label> "Hotel Name" .
+# 
+# http://smarttourisminspanishcities#hotel_id
+<http://smarttourisminspanishcities#hotel_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#hotel_id> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Hotel> .
+<http://smarttourisminspanishcities#hotel_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://smarttourisminspanishcities#nightPrice
+<http://smarttourisminspanishcities#nightPrice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#nightPrice> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Hotel> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://smarttourisminspanishcities#night_price> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#nightPrice> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://smarttourisminspanishcities#nightPrice> <http://www.w3.org/2000/01/rdf-schema#comment> "Price per night in that Hotel." .
+<http://smarttourisminspanishcities#nightPrice> <http://www.w3.org/2000/01/rdf-schema#label> "Night Price" .
+# 
+# http://smarttourisminspanishcities#priceRange
+<http://smarttourisminspanishcities#priceRange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#priceRange> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Restaurant> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/priceRange> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#priceRange> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://smarttourisminspanishcities#priceRange> <http://www.w3.org/2000/01/rdf-schema#comment> "The general price range for services provided, such as meals or transport." .
+<http://smarttourisminspanishcities#priceRange> <http://www.w3.org/2000/01/rdf-schema#label> "Price Range" .
+# 
+# http://smarttourisminspanishcities#restaurantName
+<http://smarttourisminspanishcities#restaurantName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#restaurantName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://smarttourisminspanishcities#restaurantName> <http://www.w3.org/2000/01/rdf-schema#comment> "The official name of the restaurant." .
+<http://smarttourisminspanishcities#restaurantName> <http://www.w3.org/2000/01/rdf-schema#label> "Restaurant Name" .
+# 
+# http://smarttourisminspanishcities#restaurant_id
+<http://smarttourisminspanishcities#restaurant_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#restaurant_id> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Restaurant> .
+<http://smarttourisminspanishcities#restaurant_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://smarttourisminspanishcities#servesCuisine
+<http://smarttourisminspanishcities#servesCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#servesCuisine> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Restaurant> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/servesCuisine> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#servesCuisine> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://smarttourisminspanishcities#servesCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of cusine." .
+<http://smarttourisminspanishcities#servesCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "Serves Cuisine" .
+# 
+# http://smarttourisminspanishcities#starRating
+<http://smarttourisminspanishcities#starRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#starRating> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://smarttourisminspanishcities#Hotel> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/starRating> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#starRating> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://smarttourisminspanishcities#starRating> <http://www.w3.org/2000/01/rdf-schema#comment> "Rating of the hotel based on quality standards." .
+<http://smarttourisminspanishcities#starRating> <http://www.w3.org/2000/01/rdf-schema#label> "Star Rating" .
+# 
+# http://smarttourisminspanishcities#transport_id
+<http://smarttourisminspanishcities#transport_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#transport_id> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Transport> .
+<http://smarttourisminspanishcities#transport_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://smarttourisminspanishcities#type
+<http://smarttourisminspanishcities#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://smarttourisminspanishcities#type> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Attraction> .
+<http://smarttourisminspanishcities#type> <http://www.w3.org/2000/01/rdf-schema#domain> <http://smarttourisminspanishcities#Transport> .
+<http://smarttourisminspanishcities#type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://smarttourisminspanishcities#AndalusianCuisine
+<http://smarttourisminspanishcities#AndalusianCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#AndalusianCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Restaurant> .
+<http://smarttourisminspanishcities#AndalusianCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Typical dishes of Andalusian cuisine." .
+<http://smarttourisminspanishcities#AndalusianCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "Andalusian  Cuisine" .
+# 
+# http://smarttourisminspanishcities#Attraction
+<http://smarttourisminspanishcities#Attraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Attraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Place> .
+<http://smarttourisminspanishcities#Attraction> <http://www.w3.org/2000/01/rdf-schema#comment> "Point of interest for tourists for its cultural, historical, geographical or entertainment value." .
+<http://smarttourisminspanishcities#Attraction> <http://www.w3.org/2000/01/rdf-schema#label> "Attraction" .
+# 
+# http://smarttourisminspanishcities#BeachAttraction
+<http://smarttourisminspanishcities#BeachAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#BeachAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Attraction> .
+<http://smarttourisminspanishcities#BeachAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "Attraction located in a coastal area related to mainly aquatic and sailing activities." .
+<http://smarttourisminspanishcities#BeachAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "Beach Attraction" .
+# 
+# http://smarttourisminspanishcities#BeachHotel
+<http://smarttourisminspanishcities#BeachHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#BeachHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Hotel> .
+<http://smarttourisminspanishcities#BeachHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "Hotel located near the coast where travelers are looking for proximity to the beach and services related to the maritime environment." .
+<http://smarttourisminspanishcities#BeachHotel> <http://www.w3.org/2000/01/rdf-schema#label> "Beach Hotel" .
+# 
+# http://smarttourisminspanishcities#Bike
+<http://smarttourisminspanishcities#Bike> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Bike> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Transport> .
+<http://smarttourisminspanishcities#Bike> <http://www.w3.org/2000/01/rdf-schema#comment> "Human-powered vehicle that moves thanks to the force transmitted to two aligned wheels." .
+<http://smarttourisminspanishcities#Bike> <http://www.w3.org/2000/01/rdf-schema#label> "Bike" .
+<http://smarttourisminspanishcities#Bike> <http://www.w3.org/2000/01/rdf-schema#sameAs> "https://dbpedia.org/page/Bicycle" .
+# 
+# http://smarttourisminspanishcities#Bus
+<http://smarttourisminspanishcities#Bus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Bus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Transport> .
+<http://smarttourisminspanishcities#Bus> <http://www.w3.org/2000/01/rdf-schema#comment> "A large motor vehicle that carries passengers by road, usually on fixed routes." .
+<http://smarttourisminspanishcities#Bus> <http://www.w3.org/2000/01/rdf-schema#label> "Bus" .
+# 
+# http://smarttourisminspanishcities#BusinessHotel
+<http://smarttourisminspanishcities#BusinessHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#BusinessHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Hotel> .
+<http://smarttourisminspanishcities#BusinessHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "Hotel focused on business trips with functional rooms and affordable prices." .
+<http://smarttourisminspanishcities#BusinessHotel> <http://www.w3.org/2000/01/rdf-schema#label> "Business Hotel" .
+# 
+# http://smarttourisminspanishcities#City
+<http://smarttourisminspanishcities#City> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#City> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Place> .
+<http://smarttourisminspanishcities#City> <http://www.w3.org/2000/01/rdf-schema#comment> "Urban area that offers general interest activities and tourist services." .
+<http://smarttourisminspanishcities#City> <http://www.w3.org/2000/01/rdf-schema#label> "City" .
+<http://smarttourisminspanishcities#City> <http://www.w3.org/2000/01/rdf-schema#sameAs> "http://dbpedia.org/resource/City" .
+# 
+# http://smarttourisminspanishcities#CountryHotel
+<http://smarttourisminspanishcities#CountryHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#CountryHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Hotel> .
+<http://smarttourisminspanishcities#CountryHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "Hotel located in a rural area with rustic aesthetics and rooms." .
+<http://smarttourisminspanishcities#CountryHotel> <http://www.w3.org/2000/01/rdf-schema#label> "Country Hotel" .
+# 
+# http://smarttourisminspanishcities#CulturalAttraction
+<http://smarttourisminspanishcities#CulturalAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#CulturalAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Attraction> .
+<http://smarttourisminspanishcities#CulturalAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "Attraction with a theme focused on art, history, or local traditions." .
+<http://smarttourisminspanishcities#CulturalAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "Cultural Attraction" .
+# 
+# http://smarttourisminspanishcities#CulturalEvent
+<http://smarttourisminspanishcities#CulturalEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#CulturalEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Event> .
+<http://smarttourisminspanishcities#CulturalEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Event that celebrates cultural expressions, such as music, dance or art." .
+<http://smarttourisminspanishcities#CulturalEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Cultural Event" .
+# 
+# http://smarttourisminspanishcities#Event
+<http://smarttourisminspanishcities#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "A scheduled activity or event that offers entertainment to visitors and locals." .
+<http://smarttourisminspanishcities#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event" .
+# 
+# http://smarttourisminspanishcities#GastronomicEvent
+<http://smarttourisminspanishcities#GastronomicEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#GastronomicEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Event> .
+<http://smarttourisminspanishcities#GastronomicEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Culinary themed event." .
+<http://smarttourisminspanishcities#GastronomicEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Gastronomic Event" .
+# 
+# http://smarttourisminspanishcities#Hotel
+<http://smarttourisminspanishcities#Hotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Hotel> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#int> .
+_:genid13 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://smarttourisminspanishcities#hotel_id> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#Hotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Place> .
+<http://smarttourisminspanishcities#Hotel> <http://www.w3.org/2000/01/rdf-schema#comment> "A home that offers accommodation services to travelers." .
+<http://smarttourisminspanishcities#Hotel> <http://www.w3.org/2000/01/rdf-schema#label> "Hotel" .
+# 
+# http://smarttourisminspanishcities#ItalianCuisine
+<http://smarttourisminspanishcities#ItalianCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#ItalianCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Restaurant> .
+<http://smarttourisminspanishcities#ItalianCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Typical dishes of Italian cuisine." .
+<http://smarttourisminspanishcities#ItalianCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "Italian Cuisine" .
+# 
+# http://smarttourisminspanishcities#JapaneseCuisine
+<http://smarttourisminspanishcities#JapaneseCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#JapaneseCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Restaurant> .
+<http://smarttourisminspanishcities#JapaneseCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Typical dishes of Japanese cuisine." .
+<http://smarttourisminspanishcities#JapaneseCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "Japanese  Cuisine" .
+# 
+# http://smarttourisminspanishcities#KnownCity
+<http://smarttourisminspanishcities#KnownCity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#KnownCity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Place> .
+# 
+# http://smarttourisminspanishcities#LuxuryHotel
+<http://smarttourisminspanishcities#LuxuryHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Hotel> .
+<http://smarttourisminspanishcities#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "Hotel equipped with the highest level of all its facilities, maximum exclusivity and focused on people with high purchasing power." .
+<http://smarttourisminspanishcities#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#label> "Luxury Hotel" .
+# 
+# http://smarttourisminspanishcities#MediterraneanCuisine
+<http://smarttourisminspanishcities#MediterraneanCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#MediterraneanCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Restaurant> .
+<http://smarttourisminspanishcities#MediterraneanCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Typical dishes of Mediterranean cuisine." .
+<http://smarttourisminspanishcities#MediterraneanCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "Mediterranean Cuisine" .
+# 
+# http://smarttourisminspanishcities#Metro
+<http://smarttourisminspanishcities#Metro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Metro> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Transport> .
+<http://smarttourisminspanishcities#Metro> <http://www.w3.org/2000/01/rdf-schema#comment> "Electric railway for passenger transport within urban areas, generally underground" .
+<http://smarttourisminspanishcities#Metro> <http://www.w3.org/2000/01/rdf-schema#label> "Metro" .
+# 
+# http://smarttourisminspanishcities#MexicanCuisine
+<http://smarttourisminspanishcities#MexicanCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#MexicanCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Restaurant> .
+<http://smarttourisminspanishcities#MexicanCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Typical dishes of Mexican cuisine." .
+<http://smarttourisminspanishcities#MexicanCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "Mexican Cuisine" .
+# 
+# http://smarttourisminspanishcities#MonumentAttraction
+<http://smarttourisminspanishcities#MonumentAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#MonumentAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Attraction> .
+<http://smarttourisminspanishcities#MonumentAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "Attractions related to monuments." .
+<http://smarttourisminspanishcities#MonumentAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "Monument Attraction" .
+# 
+# http://smarttourisminspanishcities#MuseumAttraction
+<http://smarttourisminspanishcities#MuseumAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#MuseumAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Attraction> .
+<http://smarttourisminspanishcities#MuseumAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "Attractions related to museums of differents types." .
+<http://smarttourisminspanishcities#MuseumAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "Museum Attraction" .
+# 
+# http://smarttourisminspanishcities#MusicalEvent
+<http://smarttourisminspanishcities#MusicalEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#MusicalEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Event> .
+<http://smarttourisminspanishcities#MusicalEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Musical event that attracts spectators." .
+<http://smarttourisminspanishcities#MusicalEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Musical Event" .
+# 
+# http://smarttourisminspanishcities#ParkAttraction
+<http://smarttourisminspanishcities#ParkAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#ParkAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Attraction> .
+<http://smarttourisminspanishcities#ParkAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "Attraction located in parks of a cultural, natural or recreational type." .
+<http://smarttourisminspanishcities#ParkAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "Park Attraction" .
+# 
+# http://smarttourisminspanishcities#Place
+<http://smarttourisminspanishcities#Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Place> <http://www.w3.org/2000/01/rdf-schema#comment> "Physical place." .
+<http://smarttourisminspanishcities#Place> <http://www.w3.org/2000/01/rdf-schema#label> "Place" .
+# 
+# http://smarttourisminspanishcities#Restaurant
+<http://smarttourisminspanishcities#Restaurant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Restaurant> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid14 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://smarttourisminspanishcities#servesCuisine> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://smarttourisminspanishcities#Restaurant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Place> .
+<http://smarttourisminspanishcities#Restaurant> <http://www.w3.org/2000/01/rdf-schema#comment> "Establishment where different types of food are served to customers." .
+<http://smarttourisminspanishcities#Restaurant> <http://www.w3.org/2000/01/rdf-schema#label> "Restaurant" .
+# 
+# http://smarttourisminspanishcities#SportingEvent
+<http://smarttourisminspanishcities#SportingEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#SportingEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Event> .
+<http://smarttourisminspanishcities#SportingEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Sporting event that attracts participants and spectators." .
+<http://smarttourisminspanishcities#SportingEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Sporting Event" .
+# 
+# http://smarttourisminspanishcities#Taxi
+<http://smarttourisminspanishcities#Taxi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Taxi> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Transport> .
+# 
+# http://smarttourisminspanishcities#TecnologicEvent
+<http://smarttourisminspanishcities#TecnologicEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#TecnologicEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Event> .
+<http://smarttourisminspanishcities#TecnologicEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Event that discusses advances and developments in the fields of technology." .
+<http://smarttourisminspanishcities#TecnologicEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Tecnologic Event" .
+# 
+# http://smarttourisminspanishcities#TouristHotel
+<http://smarttourisminspanishcities#TouristHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#TouristHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Hotel> .
+<http://smarttourisminspanishcities#TouristHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "Hotel located in tourist areas equipped to be comfortable and relaxing for its guests." .
+<http://smarttourisminspanishcities#TouristHotel> <http://www.w3.org/2000/01/rdf-schema#label> "Tourist Hotel" .
+# 
+# http://smarttourisminspanishcities#Tram
+<http://smarttourisminspanishcities#Tram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Tram> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://smarttourisminspanishcities#Transport> .
+<http://smarttourisminspanishcities#Tram> <http://www.w3.org/2000/01/rdf-schema#comment> "Electric-powered vehicle that transports passengers on rails and circulates mainly in urban areas." .
+<http://smarttourisminspanishcities#Tram> <http://www.w3.org/2000/01/rdf-schema#label> "Tram" .
+# 
+# http://smarttourisminspanishcities#Transport
+<http://smarttourisminspanishcities#Transport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://smarttourisminspanishcities#Transport> <http://www.w3.org/2000/01/rdf-schema#comment> "A service that moves people or goods between locations." .
+<http://smarttourisminspanishcities#Transport> <http://www.w3.org/2000/01/rdf-schema#label> "Transport" .
+<http://smarttourisminspanishcities#Transport> <http://www.w3.org/2000/01/rdf-schema#sameAs> "http://dbpedia.org/resource/Transport" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://smarttourisminspanishcities#Barcelona
+<http://smarttourisminspanishcities#Barcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://smarttourisminspanishcities#Barcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#City> .
+<http://smarttourisminspanishcities#Barcelona> <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> .
+<http://smarttourisminspanishcities#Barcelona> <http://schema.org/containsPlace> <http://smarttourisminspanishcities#FiraBarcelona> .
+<http://smarttourisminspanishcities#Barcelona> <http://schema.org/containsPlace> <http://smarttourisminspanishcities#ParcBarcelona> .
+<http://smarttourisminspanishcities#Barcelona> <http://smarttourisminspanishcities#cityName> "Barcelona" .
+<http://smarttourisminspanishcities#Barcelona> <http://smarttourisminspanishcities#city_id> "4"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://smarttourisminspanishcities#Barcelona> <http://smarttourisminspanishcities#geo> "41.3874,2.1686" .
+<http://smarttourisminspanishcities#Barcelona> <http://www.w3.org/2000/01/rdf-schema#sameAs> "http://dbpedia.org/resource/Barcelona" .
+# 
+# http://smarttourisminspanishcities#FiraBarcelona
+<http://smarttourisminspanishcities#FiraBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://smarttourisminspanishcities#FiraBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#CulturalEvent> .
+<http://smarttourisminspanishcities#FiraBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#Event> .
+<http://smarttourisminspanishcities#FiraBarcelona> <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> .
+<http://smarttourisminspanishcities#FiraBarcelona> <http://smarttourisminspanishcities#date> "2024-09-21"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://smarttourisminspanishcities#FiraBarcelona> <http://smarttourisminspanishcities#eventName> "Fira Barcelona" .
+<http://smarttourisminspanishcities#FiraBarcelona> <http://smarttourisminspanishcities#event_id> "12"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://smarttourisminspanishcities#FiraBarcelona> <http://smarttourisminspanishcities#type> "Cultural" .
+# 
+# http://smarttourisminspanishcities#HotelRoyalBarcelona
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#BeachHotel> .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#Hotel> .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://smarttourisminspanishcities#aggregateRating> "4.0"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://smarttourisminspanishcities#hotelCategory> "Beach Hotel" .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://smarttourisminspanishcities#hotelName> "Hotel Royal Barcelona" .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://smarttourisminspanishcities#hotel_id> "9"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://smarttourisminspanishcities#nightPrice> "252.0"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://smarttourisminspanishcities#HotelRoyalBarcelona> <http://smarttourisminspanishcities#starRating> "4"^^<http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://smarttourisminspanishcities#ParcBarcelona
+<http://smarttourisminspanishcities#ParcBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://smarttourisminspanishcities#ParcBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#Attraction> .
+<http://smarttourisminspanishcities#ParcBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#ParkAttraction> .
+<http://smarttourisminspanishcities#ParcBarcelona> <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> .
+<http://smarttourisminspanishcities#ParcBarcelona> <http://smarttourisminspanishcities#aggregateRating> "4.9"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://smarttourisminspanishcities#ParcBarcelona> <http://smarttourisminspanishcities#attractionName> "Parc Barcelona" .
+<http://smarttourisminspanishcities#ParcBarcelona> <http://smarttourisminspanishcities#attraction_id> "43"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://smarttourisminspanishcities#ParcBarcelona> <http://smarttourisminspanishcities#type> "Parc" .
+# 
+# http://smarttourisminspanishcities#RestaurantDeliciaBarcelona
+<http://smarttourisminspanishcities#RestaurantDeliciaBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://smarttourisminspanishcities#RestaurantDeliciaBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#AndalusianCuisine> .
+<http://smarttourisminspanishcities#RestaurantDeliciaBarcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#Restaurant> .
+# 
+# http://smarttourisminspanishcities#Taxi
+<http://smarttourisminspanishcities#Taxi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://smarttourisminspanishcities#Taxi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#Taxi> .
+<http://smarttourisminspanishcities#Taxi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://smarttourisminspanishcities#Transport> .
+<http://smarttourisminspanishcities#Taxi> <http://schema.org/containsPlace> <http://smarttourisminspanishcities#Barcelona> .
+<http://smarttourisminspanishcities#Taxi> <http://smarttourisminspanishcities#aggregateRating> "4.9"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://smarttourisminspanishcities#Taxi> <http://smarttourisminspanishcities#company> "City Barcelona" .
+<http://smarttourisminspanishcities#Taxi> <http://smarttourisminspanishcities#transport_id> "64"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://smarttourisminspanishcities#Taxi> <http://smarttourisminspanishcities#type> "Taxi" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://smarttourisminspanishcities#Taxi> <http://www.w3.org/2000/01/rdf-schema#comment> "Vehicle with a driver that transports passengers to the requested destination in exchange for a fare." .
+<http://smarttourisminspanishcities#Taxi> <http://www.w3.org/2000/01/rdf-schema#label> "Taxi" .
+<http://smarttourisminspanishcities#Taxi> <http://www.w3.org/2000/01/rdf-schema#sameAs> "http://dbpedia.org/resource/Taxi" .
+# 
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/2000/01/rdf-schema#label> "label" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Rules
+# #
+# #################################################################
+# 
+# 
+<urn:swrl:var#c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid15 <http://www.w3.org/2003/11/swrl#body> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid17 .
+_:genid17 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> .
+_:genid17 <http://www.w3.org/2003/11/swrl#classPredicate> <http://smarttourisminspanishcities#City> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid15 <http://www.w3.org/2003/11/swrl#head> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid19 .
+_:genid19 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> .
+_:genid19 <http://www.w3.org/2003/11/swrl#classPredicate> <http://smarttourisminspanishcities#KnownCity> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

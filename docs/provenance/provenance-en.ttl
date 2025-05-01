@@ -1,0 +1,12 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<http://owl-ontologies.com/smarttourisminspanishcities#1.8> a prov:Entity;
+	 dc:title "Smart Tourism in Spanish Cities";
+	 prov:wasAttributedTo <https://alexriera>;
+	 dc:creator <https://alexriera>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <http://owl-ontologies.com/smarttourisminspanishcities#>;
+	 prov:wasGeneratedAt "01/04/25";
+.
